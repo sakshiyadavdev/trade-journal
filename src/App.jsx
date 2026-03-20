@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { initialJournal } from "./data/journal";
+import TradeJournal from "./components/TradeJournal";
 
 function App() {
   const [journal, setJournal] = useState(() => {
@@ -12,6 +13,11 @@ function App() {
   }, [journal]);
 
   return (
-    <TradeJournal journal={journal} setJournal={setJournal} />
+    <div style={{ padding: "20px" }}>
+      <h1>Trade Journal</h1>
+      <TradeJournal journal={journal} setJournal={setJournal} />
+    </div>
   );
 }
+
+export default App;
