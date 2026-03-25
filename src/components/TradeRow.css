@@ -157,3 +157,82 @@
 .trade-meta p {
     margin: 4px 0;
 }
+
+.table-row input::before {
+    content: attr(data-label);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* 📱 Tablet View */
+@media (max-width: 1024px) {
+    .trade-container {
+        grid-template-columns: 1fr;
+    }
+
+    .trade-meta {
+        order: -1;
+        /* center ko top pe le aao */
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #222;
+    }
+
+    .table {
+        padding: 10px;
+    }
+}
+
+/* 📱 Mobile View */
+@media (max-width: 768px) {
+    .table-header {
+        display: none;
+        /* header hide for small screens */
+    }
+
+    .table-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 10px;
+    }
+
+    .table-row span {
+        font-size: 12px;
+        opacity: 0.7;
+    }
+
+    .table-row input {
+        width: 100%;
+    }
+
+    .table-row button {
+        align-self: flex-end;
+    }
+
+    /* Add labels manually feel */
+    .table-row::before {
+        content: "Trade Entry";
+        font-size: 11px;
+        opacity: 0.6;
+    }
+}
+
+/* 📱 Small Mobile */
+@media (max-width: 480px) {
+    .trade-meta h3 {
+        font-size: 16px;
+    }
+
+    .trade-meta p {
+        font-size: 12px;
+    }
+
+    .trade-meta button {
+        width: 100%;
+    }
+
+    .table button {
+        width: 100%;
+    }
+}
